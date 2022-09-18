@@ -16,6 +16,10 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
     && apt-get install -y msodbcsql17 mssql-tools unixodbc-dev \
+    && apt-get install -y  systemd \
+    && apt-get install -y  nano \
+    && apt-get install -y  cron \
+    && apt-get install -y  curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Retrieve the script used to install PHP extensions from the source container.
@@ -39,12 +43,6 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
-# Add the script to the Docker Image
-ADD cron_mercadopago.sh /root/cron_mercadopago.sh
-
-# Give execution rights on the cron scripts
-RUN chmod 0644 /root/cron_mercadopago.sh
-
 #Install Cron
 RUN apt-get -y install systemd
 RUN apt-get -y install nano
@@ -52,6 +50,12 @@ RUN apt-get -y install cron
 RUN apt-get -y install curl
 
 RUN systemctl enable cron
+
+# Add the script to the Docker Image
+ADD cron_mercadopago.sh /root/cron_mercadopago.sh
+
+# Give execution rights on the cron scripts
+RUN chmod 0644 /root/cron_mercadopago.sh
 
 # Create the log file to be able to run tail
 RUN touch /var/log/cron_mercadopago.log
