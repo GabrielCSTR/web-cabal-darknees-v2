@@ -6,6 +6,9 @@ ARG uid=1000
 
 ENV ACCEPT_EULA=Y
 
+# Copy composer.lock and composer.json
+COPY composer.lock composer.json /var/www/
+
 # Install prerequisites required for tools and extensions installed later on.
 RUN apt-get update \
     && apt-get install -y apt-transport-https gnupg2 libpng-dev libzip-dev unzip \
@@ -22,6 +25,9 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && apt-get install -y msodbcsql17 mssql-tools unixodbc-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Retrieve the script used to install PHP extensions from the source container.
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/install-php-extensions
 
@@ -33,12 +39,10 @@ RUN chmod uga+x /usr/bin/install-php-extensions \
 # Install PHP Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Remove Cache
-RUN rm -rf /var/cache/apk/*
 # Create system user to run Composer and Artisan Commands
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
+#RUN mkdir -p /home/$user/.composer && \
+#    chown -R $user:$user /home/$user
 
 # Install redis
 RUN pecl install -o -f redis \
