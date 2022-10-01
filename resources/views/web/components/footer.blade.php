@@ -21,7 +21,7 @@
 
             <!-- Copyright -->
             <div class="footer-copy font-alt">
-                <a href="#" target="_blank">Copyright &copy; Cabal Darknees 2022</a>.
+                <a href="#" target="_blank">Copyright &copy; Cabal Darkness 2022</a>.
             </div>
             <!-- End Copyright -->
             <div class="footer-made">

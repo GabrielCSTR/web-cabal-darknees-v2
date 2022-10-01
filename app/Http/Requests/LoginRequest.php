@@ -32,10 +32,12 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
+            'ID.required'    => 'Informe seu Username.',
             'ID.min'         => 'Account ID deve ter no minimo 4 caracteres.',
             'ID.exists'      => 'Essa conta não existe em nosso servidor! Tente novamente!',
             'ID.regex'       => 'Campo Login requer apenas letras/numeros, não utilize acentuações ou espaço',
             'password.regex' => 'Campo Senha requer apenas letras/numeros, não utilize acentuações ou espaço',
+            'password.required'  => 'Informe sua senha.',
         ];
     }
 }

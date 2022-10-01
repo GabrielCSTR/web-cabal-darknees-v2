@@ -28,7 +28,7 @@
 @endsection
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/stylev2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('panel/css/stylev2.css') }}">
     <div class="market-container">
         <div class="marketInfo flex-s-c">
             <div class="marketInfo-left">
@@ -146,7 +146,7 @@
                 <div class="payMethod-blocks flex-c-c">
                     <div class="payMethod-block active flex-c-c">
                         <span class="depositBlock-check"></span>
-                        <img src="images/pix-payment.png" alt="" width="200">
+                        <img src="panel/images/pix-payment.png" alt="" width="200">
                     </div>
                 </div>
             </div>

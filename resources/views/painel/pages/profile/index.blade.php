@@ -33,11 +33,11 @@
             <div class="col-12">
                 <div class="animated bounceInUp card profile-with-cover">
                     <div class="card-img-top img-fluid bg-cover height-300"
-                        style="background: url('images/news-image.jpg') 50%; background-color:black"></div>
+                        style="background: url('panel/images/news-image.jpg') 50%; background-color:black"></div>
                     <div class="media profil-cover-details w-100">
                         <div class="media-left pl-2 pt-2">
                             <a href="#" class="profile-image">
-                                <img src="{{ asset('images/logo-1.png') }}" class="rounded-circle img-border height-100"
+                                <img src="{{ asset('panel/images/logo.png') }}" class="rounded-circle img-border height-100"
                                     alt="Card image">
                             </a>
                         </div>

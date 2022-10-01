@@ -2,22 +2,22 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Basic -->
-	<title>{{ config('app.name', 'Cabal Hype') }}</title>
+	<title>{{ config('app.name', 'Cabal Darkness') }}</title>
     <meta charset="UTF-8">
-    <title>Cabal Darknees  - Servidor Privado de Cabal Online</title>
-    <meta name="title" content="Cabal Darknees - Servidor Privado de Cabal Online">
+    <title>Cabal Darkness  - Servidor Privado de Cabal Online</title>
+    <meta name="title" content="Cabal Darkness - Servidor Privado de Cabal Online">
     <meta name="description" content="⚔️Prepare-se para uma grande batalha!">
-    <meta name="keywords" content="Cabal online, Cabal Darknees, Cabal Hype, Cabal Cabal Darknees, Cabal Privado, Private Cabal, Cabal Private, Servidor de Cabal, Servidor Privado de Cabal, Cabal, Cabal Download, Cabal Cadastro, Cabal Brasil, Cabal brasileiro">
+    <meta name="keywords" content="Cabal online, Cabal Darkness, Cabal Darkness, Cabal Cabal Darkness, Cabal Privado, Private Cabal, Cabal Private, Servidor de Cabal, Servidor Privado de Cabal, Cabal, Cabal Download, Cabal Cadastro, Cabal Brasil, Cabal brasileiro">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cabaldarknees.com.br">
-    <meta property="og:title" content="Cabal Darknees - Servidor Privado de Cabal Online">
+    <meta property="og:url" content="https://cabaldarkness.com.br">
+    <meta property="og:title" content="Cabal Darkness - Servidor Privado de Cabal Online">
     <meta property="og:description" content="⚔️Prepare-se para uma grande batalha!">
     <meta property="og:image" content="#">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="#">
-    <meta property="twitter:title" content="Cabal Darknees - Servidor Privado de Cabal Online">
+    <meta property="twitter:title" content="Cabal Darkness - Servidor Privado de Cabal Online">
     <meta property="twitter:description" content="⚔️Prepare-se para uma grande batalha!">
     <meta property="twitter:image" content="#">
     <link rel="icon" href="#" type="image/png">

@@ -19,7 +19,7 @@
                 <li><a href="#download">Download</a></li>
                 {{-- <li><a href="#comunity">Comunidade</a></li> --}}
                 {{-- <li><a href="#team">Equipe</a></li> --}}
-                <li><a href="#">Painel</a></li>
+                <li><a href="{{ route('web.login') }}">Painel</a></li>
             </ul>
         </div>
     </div>

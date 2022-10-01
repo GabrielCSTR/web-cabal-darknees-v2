@@ -41,7 +41,7 @@ class MercadoPagoGateway
         {
             $payment = new MercadoPago\Payment();
             $payment->transaction_amount    = number_format($price, 2); // total compranda
-            $payment->description           = "CABAL HYPE:: Compra do Pacote : Plano-".$pacote; // titulo rifa
+            $payment->description           = "CABAL DARKNESS:: Compra do Pacote : Plano-".$pacote; // titulo rifa
             $payment->payment_method_id     = "pix"; // metodo pagamento PIX
             $payment->payer = array(  // dados usuario
                 "email"             => $user->Email,

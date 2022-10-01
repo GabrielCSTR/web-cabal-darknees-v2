@@ -21,7 +21,7 @@
               <div class="card-body">
                 <h4 class="card-title">Passe de Batalha</h4>
               </div>
-              <img class="card-img img-fluid mb-1" src="{{ asset('images/passe.png') }}" alt="Card image vip">
+              <img class="card-img img-fluid mb-1" src="{{ asset('panel/images/passe.png') }}" alt="Card image vip">
               <div class="card-body">
                 <p class="card-text">Passe de batalha, EM BREVE!!!</p>
                 {{-- <a href="#" class="card-link pink">ITENS</a> --}}
@@ -36,7 +36,7 @@
               <div class="card-body">
                 <h4 class="card-title">VIP - Premium</h4>
               </div>
-              <img class="card-img img-fluid mb-1" src="{{ asset('images/vip.png') }}" alt="Card image vip">
+              <img class="card-img img-fluid mb-1" src="{{ asset('panel/images/vip.png') }}" alt="Card image vip">
               <div class="card-body">
                 <p class="card-text">Sistema de VIP, compre agora e adiquira os status do vip</p>
                 <a href="#" class="card-link pink">CASH: 3.000</a>

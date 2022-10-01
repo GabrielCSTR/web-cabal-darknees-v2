@@ -6,14 +6,14 @@
           <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
           <li class="nav-item mr-auto">
             <a class="navbar-brand" href="{{ route('dashboard') }}">
-              {{-- <img class="brand-logo" alt="cabal hype logo" src="{{ asset('images/logo-icon.png') }}"> --}}
-              <img class="brand-logo" alt="logo" src="{{ asset('images/logo-icon.png') }}">
-              <h3 class="brand-text teal">CABAL HYPE
+              {{-- <img class="brand-logo" alt="cabal Darkness logo" src="{{ asset('images/logo-icon.png') }}"> --}}
+              <img class="brand-logo" alt="logo" src="{{ asset('panel/images/logo-icon.png') }}">
+              <h3 class="brand-text teal">CABAL DARKNESS
                 <p class="text-right text-warning font-small-3" style="margin-right: 50px">Painel</p>
               </h4>
             </a>
           </li>
-          <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon ft-toggle-right font-medium-3 white" data-ticon="ft-toggle-right"></i></a></li>
+          {{-- <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon ft-toggle-right font-medium-3 white" data-ticon="ft-toggle-right"></i></a></li> --}}
           <li class="nav-item d-md-none">
             <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a>
           </li>
@@ -31,7 +31,7 @@
                   <span class="user-name text-bold-700">{{ Auth::user()->ID }}</span>
                 </span>
                 <span class="avatar avatar-online">
-                  <img src="{{ asset('images/icon-login.jpg') }}" alt="avatar"><i></i></span>
+                  <img src="{{ asset('panel/images/icon-login.jpg') }}" alt="avatar"><i></i></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{ route('profile.index') }}"><i class="ft-user"></i> Editar Perfil</a>
                 <div class="dropdown-divider"></div>

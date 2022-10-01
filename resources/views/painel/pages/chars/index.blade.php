@@ -47,16 +47,16 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card profile-card-with-cover">
                 <div class="card-content">
-                    <div class="card-img-top img-fluid bg-cover height-200" style="background: url('images/logo-footer.png') 0 80%;"></div>
+                    <div class="card-img-top img-fluid bg-cover height-200" style="background: url('panel/images/logo.png') 0 50%;"></div>
                     <div class="card-profile-image">
-                    <img src="images/avatar/avatar-{{ getClass($char->Style) }}.png" class="rounded-circle img-border box-shadow-1" alt="Card image">
+                    <img src="panel/images/avatar/avatar-{{ getClass($char->Style) }}.png" class="rounded-circle img-border box-shadow-1" alt="Card image">
                     </div>
                     <div class="profile-card-with-cover-content text-center">
                     <div class="profile-details mt-2">
                         @if ($char->Login)
-                            <h4 class="card-title"><img src="images/online.png" height="20"></h4>
+                            <h4 class="card-title"><img src="panel/images/online.png" height="20"></h4>
                         @else
-                            <h4 class="card-title"><img src="images/offline.png" height="20"></h4>
+                            <h4 class="card-title"><img src="panel/images/offline.png" height="20"></h4>
                         @endif
                         <h4 class="card-title">{{ $char->Name }}</h4>
                         <ul class="list-inline clearfix mt-2">

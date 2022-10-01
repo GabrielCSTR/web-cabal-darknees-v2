@@ -28,7 +28,7 @@
 @endsection
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/stylev2.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('panel/css/stylev2.css') }}">
 <div class="row">
     <div class="col-12">
 

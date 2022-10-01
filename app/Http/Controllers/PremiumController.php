@@ -108,7 +108,7 @@ class PremiumController extends Controller
 
                 return response()->json([
                     'success' => true,
-                    'message' => "Obrigado por efetuar a compra do VIP no Cabal Hype, Seu vip já foi ativado",
+                    'message' => "Obrigado por efetuar a compra do VIP no Cabal Darkness, Seu vip já foi ativado",
                 ]);
             }
             else{

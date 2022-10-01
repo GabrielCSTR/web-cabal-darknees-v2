@@ -189,7 +189,7 @@ class ShopController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => "Item(s) comprado com sucesso - Cabal Hype!",
+                'message' => "Item(s) comprado com sucesso - Cabal Darkness!",
             ]);
         }
     }

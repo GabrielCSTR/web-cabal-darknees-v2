@@ -15,29 +15,26 @@ use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        return view('painel.auth.login');
+    }
 
     public function login(LoginRequest $request)
 	{
-
         // get account
         $account = cabalAuth::where('ID', $request->ID)->first();
 
         // check account banned
         if($account && $account->AuthType ==2 || $account->AuthType==3)
         {
-            return response()->json([
-                'error' => true,
-                'message' => "Atenção, sua conta está bloqueada não é possivel fazer login!",
-            ]);
+            return redirect()->back()->with('error', 'Atenção, sua conta está bloqueada não é possivel fazer login!!');
         }
 
         // VALIDACAO SE EXISTE EMAIL NA CONTA
         if(!$account->Email)
         {
-            return response()->json([
-                'error' => true,
-                'message' => "Atenção, Você precisa de email valido para poder acessar o painel. Caso tenha duvidas entre em contato com o ADM!",
-            ]);
+            return redirect()->back()->with('error', 'Atenção, Você precisa de email valido para poder acessar o painel. Caso tenha duvidas entre em contato com o ADM!!');
         }
 
         // check login
@@ -50,21 +47,12 @@ class AuthController extends Controller
         {
             // Auth login
             Auth::loginUsingId($account->UserNum, true);
-
-            return response()->json([
-                'success' => true,
-                'message' => "Logado com sucesso, Seja bem vindo ao painel user - Cabal Hype!",
-            ]);
+            return redirect()->route('web.home')->with('success', 'Logado com sucesso, Seja bem vindo ao painel user - Cabal Darkness!');
         }
         else
         {
-            return response()->json([
-                'error' => true,
-                'message' => "Atenção, Informações de Login incorretas!",
-            ]);
+            return redirect()->back()->with('error', 'Atenção, Informações de Login incorretas!');
         }
-
-        // return redirect()->route('home')->with('success', 'Logado com sucesso!');
 	}
 
     public function register(Request $request)
