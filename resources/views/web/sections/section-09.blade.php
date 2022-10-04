@@ -13,7 +13,7 @@
                     <!-- Section Title --><h3 class="small-title font-alt">Você sabia?</h3>
                     <blockquote class="testimonial white">
                         <p>
-                            Só aqui no cabal old todos os itens são dropados, novos sistemas e novidades!
+                            Só aqui no Cabal DarkNess todos os itens são dropados, novos sistemas e novidades!
                         </p>
                         <footer class="testimonial-author">
                             [ADM] xSTRx.
@@ -37,7 +37,7 @@
                     <!-- Section Title --><h3 class="small-title font-alt">Eventos diarios </h3>
                     <blockquote class="testimonial white">
                         <p>
-                            Eventos diarios e exclusivos você só encontra aqui no Cabal Old!
+                            Eventos diarios e exclusivos você só encontra aqui no Cabal DarkNess!
                         </p>
                         <footer class="testimonial-author">
                             [ADM] xSTRx.

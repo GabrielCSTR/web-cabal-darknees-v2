@@ -3,15 +3,15 @@
     <div class="container relative">
 
         <h2 class="section-title font-alt mb-70 mb-sm-40">
-            Equipe Cabal OLD
+            Equipe Cabal DarkNess
         </h2>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="section-text  mb-70 mb-xs-40">
-                    <p>A Equipe do Cabal OLD faz parte do Clã [OLD]. Qualquer jogador que se diz ser parte da equipe e não estiver no Clã [OLD] está mentindo e deve ser reportado.
-                    A Equipe do Cabal OLD não precisa de nenhum dado pessoal seu além da sua ID. Com ela, temos acesso a tudo o que é necessário para te ajudar. Nunca passe suas informações para ninguém.
-                    <br>Abaixo toda equipe Cabal OLD e suas respectivas funções:</p>
+                    <p>A Equipe do DarkNess faz parte do Clã [OLD]. Qualquer jogador que se diz ser parte da equipe e não estiver no Clã [OLD] está mentindo e deve ser reportado.
+                    A Equipe do DarkNess não precisa de nenhum dado pessoal seu além da sua ID. Com ela, temos acesso a tudo o que é necessário para te ajudar. Nunca passe suas informações para ninguém.
+                    <br>Abaixo toda equipe DarkNess e suas respectivas funções:</p>
                 </div>
             </div>
         </div>

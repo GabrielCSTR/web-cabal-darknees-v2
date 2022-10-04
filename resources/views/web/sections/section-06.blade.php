@@ -3,7 +3,7 @@
     <div class="relative">
 
         <h2 class="section-title font-alt mb-70 mb-sm-40">
-            Imagens da comunidade Cabal OLD
+            Imagens da comunidade Cabal DarkNess
         </h2>
 
         <div class="container">

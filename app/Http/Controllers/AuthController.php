@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -47,7 +48,7 @@ class AuthController extends Controller
         {
             // Auth login
             Auth::loginUsingId($account->UserNum, true);
-            return redirect()->route('web.home')->with('success', 'Logado com sucesso, Seja bem vindo ao painel user - Cabal Darkness!');
+            return redirect()->route('dashboard')->with('success', 'Logado com sucesso, Seja bem vindo ao painel user - Cabal Darkness!');
         }
         else
         {
@@ -57,35 +58,79 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $IP = $_SERVER['REMOTE_ADDR'];
-        $chave = Str::random(10);
-
-        // cria novo usuario cabal
-        $createAccount = DB::select(
-            DB::raw("SET NOCOUNT ON;EXEC Account.dbo.cabal_tool_strdeveloped_register_web '$request->ID','$request->password','$request->email',
-            '$chave', '$IP'")
-        );
-
-        $user = cabalAuth::where('ID', $request->ID)->first();
-        // email data
-        $email_data = array(
-            'name'  => $user->ID,
-            'email' => $user->Email,
-            'link'  => route('web.active', ['key' => $chave, 'account' => $user->UserNum])
-        );
-        // send email with the template
-        Mail::send('welcome_email', $email_data, function ($message) use ($email_data) {
-            $message->to($email_data['email'], $email_data['name'])
-                ->subject('CADASTRO - GAMES HYPE')
-                ->from('suporte@gameshype.com.br', 'Suporte Games Hype');
-        });
-        //$user->notify(new WelcomeEmailNotification());
-        //dd($user);
-
-        return response()->json([
-            'success' => true,
-            'message' => "Olá, $request->ID. Sua conta foi criada com sucesso, agradecemos a preferencia, tenha um bom jogo",
+        $validator = Validator::make($request->all(), [
+            'userName'       => 'required',
+            'userID'         => 'required',
+            'userEmail'      => 'required',
+            'userPassword'   => 'required',
+            'userChave'      => 'required',
         ]);
+
+        if ($validator->fails()) {
+          return response()->json(['status' => 'error', 'msg' => $validator->errors()], 400);
+        }
+
+         // validacao dados SQL
+        #----------verificação de email----------#
+        $email = cabalAuth::where('email', '=', $request->userEmail)->count();
+
+        #---------verificação de usuário---------#
+        $account =  cabalAuth::where('ID', '=',  $request->userID)->count();
+        // dd($account);
+        if($email > 0)
+        {
+            return response()->json(['status' => 'error', 'msg' => 'O e-mail que deseja usar já está sendo utilizado']);
+        }
+        else if ($account > 0)
+        {
+            return response()->json(['status' => 'error', 'msg' => 'O login que deseja utilizar já está sendo utilizado']);
+        }
+        else{
+
+            $IP = $_SERVER['REMOTE_ADDR'];
+            $chave = $request->userChave;
+
+            // cria novo usuario cabal
+            $createAccount = DB::select(
+                DB::raw("SET NOCOUNT ON;EXEC Account.dbo.cabal_tool_strdeveloped_register_web '$request->userID','$request->userPassword','$request->userEmail',
+                '$chave', '$IP'")
+            );
+
+            //$user = cabalAuth::where('ID', $request->ID)->first();
+            // email data
+            /*$email_data = array(
+                'name'  => $user->ID,
+                'email' => $user->Email,
+                'link'  => route('web.active', ['key' => $chave, 'account' => $user->UserNum])
+            );*/
+            // send email with the template
+            /*Mail::send('welcome_email', $email_data, function ($message) use ($email_data) {
+                $message->to($email_data['email'], $email_data['name'])
+                    ->subject('CADASTRO - GAMES DARKNESS')
+                    ->from('suporte@gamesdarkness.com', 'Suporte Games DarkNess');
+            });*/
+            //$user->notify(new WelcomeEmailNotification());
+            //dd($user);
+
+            if($createAccount)
+            {
+                $response = array(
+                    'status' => 'success',
+                    'msg' => 'Olá, '.$request->userID.' sua conta foi cadastrada, agradecemos a preferencia, tenha um bom jogo.',
+                );
+
+                return response()->json($response);
+            }
+            else {
+                $response = array(
+                    'status' => 'error',
+                    'msg' => 'Falha no cadastro tente novamente!.',
+                );
+
+                return response()->json($response);
+            }
+
+        }
 
     }
 

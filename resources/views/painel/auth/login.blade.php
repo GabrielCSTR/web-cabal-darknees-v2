@@ -112,7 +112,7 @@
                                         <span>New to Modern ?</span>
                                     </p>
                                     <div class="card-body">
-                                        <a href="register-with-bg-image.html"
+                                        <a href="/#register"
                                             class="btn btn-outline-danger btn-block"><i class="ft-user"></i>
                                             Register</a>
                                     </div>

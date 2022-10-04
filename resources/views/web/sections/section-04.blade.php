@@ -10,7 +10,7 @@
                     <div class="banner-content">
                         <h3 class="banner-heading font-alt">Você procura por um cabal de qualidade?</h3>
                         <div class="banner-decription">
-                            Somente aqui no cabal old você consegue se divertir com seus amigos.
+                            Somente aqui no Cabal DakrNess você consegue se divertir com seus amigos.
                             Venha se aventurar conosco, chame os amigos e bora se divertir.
                         </div>
                         <div class="local-scroll">
